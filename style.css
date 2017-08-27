@@ -1,10 +1,7 @@
 /*Base Styling for Entire Page*/
-*{
-	margin: 0;
-}
-
 body{
 	font-family: 'Open-Sans', Arial, sans-serif;
+	margin: 0;
 }
 
 /*Left Side Input Field*/
@@ -25,7 +22,7 @@ body{
 
 .front-page-focus{
 	position: relative;
-	top: 25%;
+	top: 20%;
 }
 
 h1{
@@ -34,10 +31,6 @@ h1{
 	font-weight: 800;
 	margin: 0 auto;
 	width: 90%;
-}
-
-input{
-	height: 40px;
 }
 
 .input-field{
@@ -64,19 +57,41 @@ main {
 }
 
 /*Right Side Input Field*/
+.bookmark-buttons{
+	color: #455A64;
+	background-color: #FFF;
+	border: 0px solid #FFF;
+	font-size: 16px;
+	text-decoration-color: #F2F4F4;
+	text-decoration-line: underline;
+	text-decoration-style: solid;
+}
+
+.bookmark-buttons:hover{
+	font-weight: 800;
+	text-decoration-line: underline;
+	text-decoration-color: #FFC107;
+	text-decoration-style: solid;
+}
+
 .delete-button{
 	float: right;
 }
 
-.read-button{
-	float: left;
+.saved-url-link{
+	border-bottom: 1px solid #CFD8DC;
+	border-top: 1px solid #CFD8DC;
+	color: #607D8B;
+	margin: 10px auto;
+	padding: 10px auto;
 }
 
 .saved-website{
 	background-color: #FFF;
-	color: #455A64;
 	border: 1px solid #607D8B;
+	color: #455A64;
 	margin: 10px;
+	padding: 10px;
 }
 
 section{
