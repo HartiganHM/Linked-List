@@ -1,0 +1,138 @@
+/*Base Styling for Entire Page*/
+body{
+	font-family: 'Open-Sans', Arial, sans-serif;
+	margin: 0;
+}
+
+/*Left Side Input Field*/
+.enter-button{
+	background-color: #FFC107;
+	border: 0 solid #FFF;
+	color: #FFF;
+	display: block;
+	font-size: 24px;
+	font-weight: 800;
+	margin: 60px auto;
+	width: 90%;
+}
+
+.enter-button:hover{
+	background-color: #FFD773;
+}
+
+.front-page-focus{
+	position: relative;
+	top: 20%;
+}
+
+h1{
+	display: block;
+	font-size: 100px;
+	font-weight: 800;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.input-field{
+	display:block;
+	font-size: 40px;
+	margin: 60px auto;
+	padding: 10px;
+	width: 85%;
+}
+
+.logo{
+	margin: 0 10px 0 5px;
+	width: 125px;
+}
+
+main {
+	background-color: #455A64;
+	color: #FFF;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 50%;
+}
+
+/*Right Side Input Field*/
+
+/*Buttons*/
+.bookmark-buttons{
+	color: #455A64;
+	background-color: #FFF;
+	border: 0px solid #FFF;
+	font-size: 16px;
+	margin-top: 10px;
+	text-decoration-color: #F2F4F4;
+	text-decoration-line: underline;
+}
+
+.bookmark-buttons:hover{
+	font-weight: 800;
+	text-decoration-color: #FFC107;
+}
+
+.delete-button{
+	float: right;
+}
+
+/*.read-button:enabled{
+	color: #F05A28;
+	font-weight: 800;
+}*/
+
+/*Text Elements*/
+h2{
+	font-size: 32px;
+	margin: 5px 0;
+}
+
+.saved-url-link{
+	color: #607D8B;
+	font-size: 24px;
+	text-decoration-color: #F2F4F4;
+}
+
+.saved-url-link:hover{
+	color: #455A64;
+	font-weight: 800;
+	text-decoration-color: #FFC107;
+}
+
+/*.saved-url-link:enabled{
+	text-decoration-color: #CFD8DC;
+}*/
+
+
+/*Defined Layout Sections*/
+.saved-website{
+	background-color: #FFF;
+	border: 1px solid #607D8B;
+	color: #455A64;
+	display: block;
+	margin: 20px;
+	padding: 10px 20px;
+}
+
+/*.saved-website:enabled{
+	background-color: #F2F4F4;
+}*/
+
+section{
+	background: #CFD8DC;
+	display: inline-block;
+	float: right;
+	height: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 50%;
+}
+
+.url-section{
+	border-bottom: 1px solid #CFD8DC;
+	border-top: 1px solid #CFD8DC;
+	padding: 20px 0;
+}
