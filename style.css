@@ -57,6 +57,8 @@ main {
 }
 
 /*Right Side Input Field*/
+
+/*Buttons*/
 .bookmark-buttons{
 	color: #455A64;
 	background-color: #FFF;
@@ -76,6 +78,12 @@ main {
 	float: right;
 }
 
+/*.read-button:enabled{
+	color: #F05A28;
+	font-weight: 800;
+}*/
+
+/*Text Elements*/
 h2{
 	font-size: 32px;
 	margin: 5px 0;
@@ -93,6 +101,12 @@ h2{
 	text-decoration-color: #FFC107;
 }
 
+/*.saved-url-link:enabled{
+	text-decoration-color: #CFD8DC;
+}*/
+
+
+/*Defined Layout Sections*/
 .saved-website{
 	background-color: #FFF;
 	border: 1px solid #607D8B;
@@ -101,6 +115,10 @@ h2{
 	margin: 10px;
 	padding: 10px 20px;
 }
+
+/*.saved-website:enabled{
+	background-color: #F2F4F4;
+}*/
 
 section{
 	background: #CFD8DC;
@@ -118,5 +136,3 @@ section{
 	border-top: 1px solid #CFD8DC;
 	padding: 20px 0;
 }
-
-
