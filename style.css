@@ -30,6 +30,7 @@ h1{
 	font-size: 100px;
 	font-weight: 800;
 	margin: 0 auto;
+	text-align: center;
 	width: 90%;
 }
 
@@ -46,7 +47,7 @@ h1{
 	width: 125px;
 }
 
-main {
+main{
 	background-color: #455A64;
 	color: #FFF;
 	height: 100%;
@@ -61,7 +62,7 @@ main {
 /*Buttons*/
 .bookmark-buttons{
 	color: #455A64;
-	background-color: #FFF;
+	background-color: transparent;
 	border: 0px solid #FFF;
 	font-size: 16px;
 	margin-top: 10px;
@@ -78,10 +79,10 @@ main {
 	float: right;
 }
 
-/*.read-button:enabled{
+.read .read-button{
 	color: #F05A28;
 	font-weight: 800;
-}*/
+}
 
 /*Text Elements*/
 h2{
@@ -101,9 +102,9 @@ h2{
 	text-decoration-color: #FFC107;
 }
 
-/*.saved-url-link:enabled{
+.read .saved-url-link{
 	text-decoration-color: #CFD8DC;
-}*/
+}
 
 
 /*Defined Layout Sections*/
@@ -116,9 +117,9 @@ h2{
 	padding: 10px 20px;
 }
 
-/*.saved-website:enabled{
+.read.saved-website{
 	background-color: #F2F4F4;
-}*/
+}
 
 section{
 	background: #CFD8DC;
