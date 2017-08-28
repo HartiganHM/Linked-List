@@ -22,10 +22,14 @@ function newCard(title, url) {
 }
 
 function removeLink(){
-  $(document).on('click', function(event) {
+  $('.delete-button').on('click', function(event) {
   $(event.target).closest('.saved-website').remove();
  });
 }
+
+// function validTitleUrl(title, url){
+//   ${title} ${}
+// }
 
 // toggleClass, hasClass, prepend, do checklist, 
 //single responsibilty functions, read .on docs for read 
