@@ -1,5 +1,6 @@
 /*Base Styling for Entire Page*/
 body{
+	background: #CFD8DC;
 	font-family: 'Open-Sans', Arial, sans-serif;
 	margin: 0;
 }
@@ -122,11 +123,10 @@ h2{
 }
 
 section{
-	background: #CFD8DC;
 	display: inline-block;
 	float: right;
 	height: 100%;
-	position: fixed;
+	position: relative;
 	right: 0;
 	top: 0;
 	width: 50%;
