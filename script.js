@@ -3,7 +3,10 @@ $('.enter-button').on('click', function(){
   var websiteTitle = $('#website-title').val();
   var websiteUrl = $('#website-url').val(); 
   newCard(websiteTitle, websiteUrl); 
+  disableEnter ();
 });
+
+$('input').on('keyup', disableEnter)
 
 /*Functions*/
 function newCard(title, url) {
@@ -24,7 +27,6 @@ function newCard(title, url) {
 };
 
 function addReadClass() {
-  console.log('Butt');
   readButton();
   readSavedWebsite();
   readUrl();
@@ -55,6 +57,16 @@ function readUrl() {
     ($(event.target).closest(readUrl.addClass('read-url-link')));
   })
 }
+
+function disableEnter() {
+  if ($('#website-title').val()!=="" && $('#website-url').val()!=="") {
+    $('#enter-button').prop('disabled', false);
+  } else {
+    $('#enter-button').prop('disabled', true);
+  }
+}
+
+
 
 // toggleClass, hasClass, prepend, do checklist, 
 //single responsibilty functions, read .on docs for read 
