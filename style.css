@@ -79,7 +79,7 @@ main{
 	float: right;
 }
 
-.read .read-button{
+.read-button{
 	color: #F05A28;
 	font-weight: 800;
 }
@@ -102,7 +102,7 @@ h2{
 	text-decoration-color: #FFC107;
 }
 
-.read .saved-url-link{
+.read-url-link{
 	text-decoration-color: #CFD8DC;
 }
 
@@ -117,7 +117,7 @@ h2{
 	padding: 10px 20px;
 }
 
-.read.saved-website{
+.read-website{
 	background-color: #F2F4F4;
 }
 
