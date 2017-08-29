@@ -8,10 +8,10 @@ $('.enter-button').on('click', function(){
 /*Functions*/
 function newCard(title, url) {
   $( ".bookmark-container" ).prepend( `
-    <div class="saved-website">
+    <div class="saved-website" id="saved-website" >
       <h2>${title}</h2>
       <div class="url-section">
-        <a class="saved-url-link" href=${url} alt="Website Description" >${url}</a>
+        <a class="saved-url-link" id="saved-url-link" href=${url} alt="Website Description" >${url}</a>
       </div>
       <div>
         <input type="submit" name="read" value="Read" class="bookmark-buttons" id="read-button" />
@@ -31,28 +31,28 @@ function addReadClass() {
 };
 
 function readButton() {
-  var readButton = $('#read-button').on('click', function() {
+  var readButton = $('#read-button').on('click', function(event) {
     readButton.hasClass('read-button')?
-    (readButton.removeClass('read-button')):
-    (readButton.addClass('read-button'));
+    ($(event.target).closest(readButton.removeClass('read-button'))):
+    ($(event.target).closest(readButton.addClass('read-button')));
   })
 }
 
 function readSavedWebsite() {
-  var savedWebsite = $('.saved-website');
-  $('#read-button').on('click', function() {
+  var savedWebsite = $('#saved-website');
+  $('#read-button').on('click', function(event) {
     savedWebsite.hasClass('read-website')?
-    (savedWebsite.removeClass('read-website')):
-    (savedWebsite.addClass('read-website'));
+    ($(event.target).closest(savedWebsite.removeClass('read-website'))):
+    ($(event.target).closest(savedWebsite.addClass('read-website')));
   })
 }
 
 function readUrl() {
-  var readUrl = $('.saved-url-link');
-  $('#read-button').on('click', function() {
+  var readUrl = $('#saved-url-link');
+  $('#read-button').on('click', function(event) {
     readUrl.hasClass('read-url-link')?
-    (readUrl.removeClass('read-url-link')):
-    (readUrl.addClass('read-url-link'));
+    ($(event.target).closest(readUrl.removeClass('read-url-link'))):
+    ($(event.target).closest(readUrl.addClass('read-url-link')));
   })
 }
 
