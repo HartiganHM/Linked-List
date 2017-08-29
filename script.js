@@ -5,7 +5,7 @@ $('.enter-button').on('click', function(){
 })
 
 function newCard(title, url) {
-  $( ".bookmark-container" ).prepend( `
+  $( '.bookmark-container' ).prepend( `
     <div class="saved-website">
       <h2>${title}</h2>
       <div class="url-section">
@@ -18,7 +18,18 @@ function newCard(title, url) {
     </div>
   `
  );
+  removeLink();
 }
+
+function removeLink(){
+  $('.delete-button').on('click', function(event) {
+  $(event.target).closest('.saved-website').remove();
+ });
+}
+
+// function validTitleUrl(title, url){
+//   ${title} ${}
+// }
 
 // toggleClass, hasClass, prepend, do checklist, 
 //single responsibilty functions, read .on docs for read 
