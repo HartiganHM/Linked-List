@@ -10,8 +10,11 @@ $('input').on('keyup', disableEnter)
 
 /*Functions*/
 function newCard(title, url) {
+3
   $( ".bookmark-container" ).prepend( `
     <div class="saved-website" id="saved-website" >
+
+ 
       <h2>${title}</h2>
       <div class="url-section">
         <a class="saved-url-link" id="saved-url-link" href=${url} alt="Website Description" >${url}</a>
@@ -24,6 +27,7 @@ function newCard(title, url) {
   `
  );
   addReadClass();
+  removeCard();
 };
 
 function addReadClass() {
@@ -66,7 +70,11 @@ function disableEnter() {
   }
 }
 
-
+function removeCard(){
+  $('.delete-button').on('click', function(event) {
+  $(event.target).closest('.saved-website').remove();
+ });
+}
 
 // toggleClass, hasClass, prepend, do checklist, 
 //single responsibilty functions, read .on docs for read 
