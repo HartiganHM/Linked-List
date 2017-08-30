@@ -13,6 +13,11 @@ $('.enter-button').on('click', function(){
 
 $('section').on('click', function(){
   countRead();
+  disableClear();
+})
+
+$('.clear-button').on('click', function(){
+  clearRead();
 })
 
 $('input').on('keyup', disableEnter)
@@ -89,6 +94,29 @@ function removeCard(){
   $('.delete-button').on('click', function(event) {
   $(event.target).closest('.saved-website').remove();
  });
+}
+
+function countRead(){
+  var clickedRead = $('.read-website').length;
+  var totalCount = $('.bookmark-buttons#read-button').length;
+  var unclickedRead = totalCount - clickedRead;
+  $('.toRead').text(unclickedRead);
+  $('.doneReading').text(clickedRead);
+  $('.myTotal').text(totalCount);
+}
+
+function clearRead(){
+  $('.read-website').remove();
+}
+
+function disableClear() {
+  if ($('.bookmark-buttons#read-button').length != 0) {
+    $('#clear-button').prop('disabled', false);
+    console.log('turn off disabled');
+  } else {
+    $('#clear-button').prop('disabled', true);
+    console.log('keep it disabled');
+  }
 }
 
 function validateUrl(url) {
