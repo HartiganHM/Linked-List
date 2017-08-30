@@ -1,10 +1,14 @@
 /*Listeners*/
 $('.enter-button').on('click', function(){
   var websiteTitle = $('#website-title').val();
-  var websiteUrl = $('#website-url').val(); 
-  newCard(websiteTitle, websiteUrl); 
-  disableEnter();
-  countRead();
+  var websiteUrl = $('#website-url').val();
+  if (validateUrl(websiteUrl) === false) {
+    return;
+  } else {
+    newCard(websiteTitle, websiteUrl); 
+    disableEnter();
+    countRead();
+  }
 });
 
 $('section').on('click', function(){
@@ -85,4 +89,15 @@ function removeCard(){
   $('.delete-button').on('click', function(event) {
   $(event.target).closest('.saved-website').remove();
  });
+}
+
+function validateUrl(url) {
+  var validator = /^(http|https)?:\/\/[a-zA-Z0-9-\.]+\.[a-z]{2,4}/;
+  if(!validator.test(url)){
+    console.log('I Broken!');
+    return false;
+  } else {
+    console.log('I work');
+    return true;
+  }
 }
