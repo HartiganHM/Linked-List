@@ -10,7 +10,6 @@ $('input').on('keyup', disableEnter)
 
 /*Functions*/
 function newCard(title, url) {
-3
   $( ".bookmark-container" ).prepend( `
     <div class="saved-website" id="saved-website" >
 
