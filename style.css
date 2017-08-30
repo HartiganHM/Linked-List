@@ -28,9 +28,8 @@ body{
 
 .front-page-focus{
 	position: relative;
-	top: 30%;
-	transform: traslateY(-30%);
-
+	top: 25%;
+	transform: traslateY(-25%);
 }
 
 h1{
@@ -67,11 +66,12 @@ main{
 }
 
 table, td, th{
+	border: 1px solid #CFD8DC;
 	border-collapse: collapse;
+	margin: 2vw auto;
+	padding: 2px;
 	text-align: center;
-	margin: auto;
-	border-color: #FFC107;
-	border: 1px solid;
+	width: 35vw;
 }
 
 /*Right Side Input Field*/
@@ -188,5 +188,11 @@ section{
 	section {
 		float: none;
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px){
+	table{
+		width: 85%;
 	}
 }
