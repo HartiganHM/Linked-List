@@ -14,6 +14,29 @@ $('section').on('click', function(){
 $('input').on('keyup', disableEnter)
 
 /*Functions*/
+function addReadClass() {
+  readButton();
+  readSavedWebsite();
+  readUrl();
+};
+
+function countRead(){
+  var clickedRead = $('.read-website').length;
+  var totalCount = $('.bookmark-buttons#read-button').length;
+  var unclickedRead = totalCount - clickedRead;
+  $('.toRead').text(unclickedRead);
+  $('.doneReading').text(clickedRead);
+  $('.myTotal').text(totalCount);
+}
+
+function disableEnter() {
+  if ($('#website-title').val()!=="" && $('#website-url').val()!=="") {
+    $('#enter-button').prop('disabled', false);
+  } else {
+    $('#enter-button').prop('disabled', true);
+  }
+}
+
 function newCard(title, url) {
   $( ".bookmark-container" ).prepend( `
     <div class="saved-website" id="saved-website" >
@@ -30,12 +53,6 @@ function newCard(title, url) {
  );
   addReadClass();
   removeCard();
-};
-
-function addReadClass() {
-  readButton();
-  readSavedWebsite();
-  readUrl();
 };
 
 function readButton() {
@@ -64,29 +81,8 @@ function readUrl() {
   })
 }
 
-function disableEnter() {
-  if ($('#website-title').val()!=="" && $('#website-url').val()!=="") {
-    $('#enter-button').prop('disabled', false);
-  } else {
-    $('#enter-button').prop('disabled', true);
-  }
-}
-
 function removeCard(){
   $('.delete-button').on('click', function(event) {
   $(event.target).closest('.saved-website').remove();
  });
 }
-
-function countRead(){
-  var clickedRead = $('.read-website').length;
-  var totalCount = $('.bookmark-buttons#read-button').length;
-  var unclickedRead = totalCount - clickedRead;
-  $('.toRead').text(unclickedRead);
-  $('.doneReading').text(clickedRead);
-  $('.myTotal').text(totalCount);
-}
-
-// toggleClass, hasClass, prepend, do checklist, 
-//single responsibilty functions, read .on docs for read 
-// functionality
