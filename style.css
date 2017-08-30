@@ -28,8 +28,8 @@ body{
 
 .front-page-focus{
 	position: relative;
-	top: 30%;
-	transform: traslateY(-30%);
+	top: 25%;
+	transform: traslateY(-25%);
 }
 
 h1{
