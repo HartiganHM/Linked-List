@@ -7,12 +7,12 @@ $('.enter-button').on('click', function(){
   countRead();
 });
 
+$('input').on('keyup', disableEnter)
+
 $('section').on('click', function(){
   countRead();
   console.log('hells bells')
 })
-
-$('input').on('keyup', disableEnter)
 
 /*Functions*/
 function newCard(title, url) {
@@ -40,28 +40,22 @@ function addReadClass() {
 };
 
 function readButton() {
-  var readButton = $('#read-button').on('click', function(event) {
-    readButton.hasClass('read-button')?
-    ($(event.target).closest(readButton.removeClass('read-button'))):
-    ($(event.target).closest(readButton.addClass('read-button')));
+  var readButton = $('#read-button').on('click', function() {
+    readButton.toggleClass('read-button');
   })
 }
 
 function readSavedWebsite() {
   var savedWebsite = $('#saved-website');
-  $('#read-button').on('click', function(event) {
-    savedWebsite.hasClass('read-website')?
-    ($(event.target).closest(savedWebsite.removeClass('read-website'))):
-    ($(event.target).closest(savedWebsite.addClass('read-website')));
+  $('#read-button').on('click', function() {
+    savedWebsite.toggleClass('read-website');
   })
 }
 
 function readUrl() {
   var readUrl = $('#saved-url-link');
-  $('#read-button').on('click', function(event) {
-    readUrl.hasClass('read-url-link')?
-    ($(event.target).closest(readUrl.removeClass('read-url-link'))):
-    ($(event.target).closest(readUrl.addClass('read-url-link')));
+  $('#read-button').on('click', function() {
+    readUrl.toggleClass('read-url-link');
   })
 }
 
