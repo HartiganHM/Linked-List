@@ -9,7 +9,6 @@ $('.enter-button').on('click', function(){
 
 $('section').on('click', function(){
   countRead();
-  console.log('hells bells')
 })
 
 $('input').on('keyup', disableEnter)
@@ -86,8 +85,6 @@ function countRead(){
   $('.toRead').text(unclickedRead);
   $('.doneReading').text(clickedRead);
   $('.myTotal').text(totalCount);
-  console.log('This is unclickedRead ' + unclickedRead);
-  console.log('This is clickedRead ' + clickedRead);  
 }
 
 // toggleClass, hasClass, prepend, do checklist, 
