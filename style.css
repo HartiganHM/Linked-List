@@ -29,6 +29,10 @@ body{
 }
 
 #clear-button{
+    /*display: none;*/
+    margin: 30px auto 0;
+	display: block;
+	width: 85%;
     white-space: initial;
 }
 
@@ -49,7 +53,7 @@ h1{
 
 .input-field{
 	box-sizing: border-box;
-	display:block;
+	display: block;
 	font-size: 3vw;
 	margin: 2vw auto;
 	padding: 10px;
@@ -72,8 +76,7 @@ main{
 }
 
 table, td, th{
-	border: 1px solid #CFD8DC;
-	border-collapse: collapse;
+	font-size: 1.25vw;
 	margin: 2vw auto;
 	padding: 2px;
 	text-align: center;
@@ -131,6 +134,12 @@ h2{
 
 
 /*Defined Layout Sections*/
+.bookmark-container{
+	margin: auto;
+	display: block;
+	width: 100%;
+}
+
 .saved-website{
 	background-color: #FFF;
 	border: 1px solid #607D8B;
@@ -160,7 +169,17 @@ section{
 	padding: 20px 0;
 }
 
+.saved-url-link#saved-url-link{
+	overflow-wrap: break-word;
+}
+
 /*Media Queries*/
+@media screen and (max-width: 550px){
+	table, td, th{
+	font-size: 2.75vw;
+	}
+}
+
 @media screen and (max-width: 550px){
 	h1{
 		font-size: 6vw;
