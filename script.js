@@ -1,20 +1,23 @@
-/*Buttons*/
+/*Listeners*/
 $('.enter-button').on('click', function(){
   var websiteTitle = $('#website-title').val();
   var websiteUrl = $('#website-url').val(); 
   newCard(websiteTitle, websiteUrl); 
-  disableEnter ();
+  disableEnter();
+  countRead();
 });
+
+$('section').on('click', function(){
+  countRead();
+  console.log('hells bells')
+})
 
 $('input').on('keyup', disableEnter)
 
 /*Functions*/
 function newCard(title, url) {
-3
   $( ".bookmark-container" ).prepend( `
     <div class="saved-website" id="saved-website" >
-
- 
       <h2>${title}</h2>
       <div class="url-section">
         <a class="saved-url-link" id="saved-url-link" href=${url} alt="Website Description" >${url}</a>
@@ -74,6 +77,17 @@ function removeCard(){
   $('.delete-button').on('click', function(event) {
   $(event.target).closest('.saved-website').remove();
  });
+}
+
+function countRead(){
+  var clickedRead = $('.read-website').length;
+  var totalCount = $('.bookmark-buttons#read-button').length;
+  var unclickedRead = totalCount - clickedRead;
+  $('.toRead').text(unclickedRead);
+  $('.doneReading').text(clickedRead);
+  $('.myTotal').text(totalCount);
+  console.log('This is unclickedRead ' + unclickedRead);
+  console.log('This is clickedRead ' + clickedRead);  
 }
 
 // toggleClass, hasClass, prepend, do checklist, 
