@@ -6,6 +6,7 @@ body{
 }
 
 /*Left Side Input Field*/
+.clear-button, 
 .enter-button{
 	background-color: #FFC107;
 	border: 0 solid #FFF;
@@ -17,13 +18,19 @@ body{
 	width: 90%;
 }
 
+.clear-button, 
 .enter-button:hover{
 	background-color: #FFD773;
 }
 
+.clear-button, 
 .enter-button:disabled{
 	background-color: #999;
 	opacity: 0.3;
+}
+
+.input-field.clear-button{
+    white-space: initial;
 }
 
 .front-page-focus{

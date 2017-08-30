@@ -3,13 +3,16 @@ $('.enter-button').on('click', function(){
   var websiteTitle = $('#website-title').val();
   var websiteUrl = $('#website-url').val(); 
   newCard(websiteTitle, websiteUrl); 
-  disableEnter();
   countRead();
 });
 
 $('section').on('click', function(){
   countRead();
-  console.log('hells bells')
+  disableClear();
+})
+
+$('.clear-button').on('click', function(){
+  clearRead();
 })
 
 $('input').on('keyup', disableEnter)
@@ -86,8 +89,20 @@ function countRead(){
   $('.toRead').text(unclickedRead);
   $('.doneReading').text(clickedRead);
   $('.myTotal').text(totalCount);
-  console.log('This is unclickedRead ' + unclickedRead);
-  console.log('This is clickedRead ' + clickedRead);  
+}
+
+function clearRead(){
+  $('.bookmark-buttons#read-button').remove();
+}
+
+function disableClear() {
+  if ($('.bookmark-buttons#read-button').length != 0) {
+    $('#clear-button').prop('disabled', false);
+    console.log('turn off disabled');
+  } else {
+    $('#clear-button').prop('disabled', true);
+    console.log('keep it disabled');
+  }
 }
 
 // toggleClass, hasClass, prepend, do checklist, 
