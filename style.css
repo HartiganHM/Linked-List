@@ -15,21 +15,20 @@ body{
 	font-size: 24px;
 	font-weight: 800;
 	margin: 30px auto;
-	width: 90%;
 }
 
-.clear-button, 
+.clear-button:hover, 
 .enter-button:hover{
 	background-color: #FFD773;
 }
 
-.clear-button, 
+.clear-button:disabled, 
 .enter-button:disabled{
 	background-color: #999;
 	opacity: 0.3;
 }
 
-.input-field.clear-button{
+#clear-button{
     white-space: initial;
 }
 

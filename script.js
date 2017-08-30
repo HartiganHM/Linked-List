@@ -92,7 +92,7 @@ function countRead(){
 }
 
 function clearRead(){
-  $('.bookmark-buttons#read-button').remove();
+  $('.read-website').remove();
 }
 
 function disableClear() {
