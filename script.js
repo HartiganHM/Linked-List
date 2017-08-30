@@ -1,9 +1,14 @@
 /*Listeners*/
 $('.enter-button').on('click', function(){
   var websiteTitle = $('#website-title').val();
-  var websiteUrl = $('#website-url').val(); 
-  newCard(websiteTitle, websiteUrl); 
-  countRead();
+  var websiteUrl = $('#website-url').val();
+  if (validateUrl(websiteUrl) === false) {
+    return;
+  } else {
+    newCard(websiteTitle, websiteUrl); 
+    disableEnter();
+    countRead();
+  }
 });
 
 $('section').on('click', function(){
@@ -18,6 +23,29 @@ $('.clear-button').on('click', function(){
 $('input').on('keyup', disableEnter)
 
 /*Functions*/
+function addReadClass() {
+  readButton();
+  readSavedWebsite();
+  readUrl();
+};
+
+function countRead(){
+  var clickedRead = $('.read-website').length;
+  var totalCount = $('.bookmark-buttons#read-button').length;
+  var unclickedRead = totalCount - clickedRead;
+  $('.toRead').text(unclickedRead);
+  $('.doneReading').text(clickedRead);
+  $('.myTotal').text(totalCount);
+}
+
+function disableEnter() {
+  if ($('#website-title').val()!=="" && $('#website-url').val()!=="") {
+    $('#enter-button').prop('disabled', false);
+  } else {
+    $('#enter-button').prop('disabled', true);
+  }
+}
+
 function newCard(title, url) {
   $( ".bookmark-container" ).prepend( `
     <div class="saved-website" id="saved-website" >
@@ -34,12 +62,6 @@ function newCard(title, url) {
  );
   addReadClass();
   removeCard();
-};
-
-function addReadClass() {
-  readButton();
-  readSavedWebsite();
-  readUrl();
 };
 
 function readButton() {
@@ -66,14 +88,6 @@ function readUrl() {
     ($(event.target).closest(readUrl.removeClass('read-url-link'))):
     ($(event.target).closest(readUrl.addClass('read-url-link')));
   })
-}
-
-function disableEnter() {
-  if ($('#website-title').val()!=="" && $('#website-url').val()!=="") {
-    $('#enter-button').prop('disabled', false);
-  } else {
-    $('#enter-button').prop('disabled', true);
-  }
 }
 
 function removeCard(){
@@ -105,6 +119,15 @@ function disableClear() {
   }
 }
 
-// toggleClass, hasClass, prepend, do checklist, 
-//single responsibilty functions, read .on docs for read 
-// functionality
+function validateUrl(url) {
+  var websiteInput = $('input#website-url');
+  var validator = /^(http|https)?:\/\/[a-zA-Z0-9-\.]+\.[a-z]{2,4}/;
+  if(!validator.test(url)){
+    websiteInput.css('background-color', '#FFC2B7');
+    alert('Please Enter a Valid URL \(ie http\(s\)\:\/\/www\.\.\.\)');
+    return false;
+  } else {
+    websiteInput.css('background-color', '#FFF');
+    return true;
+  }
+}
