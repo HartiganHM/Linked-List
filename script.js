@@ -92,12 +92,14 @@ function removeCard(){
 }
 
 function validateUrl(url) {
+  var websiteInput = $('input#website-url');
   var validator = /^(http|https)?:\/\/[a-zA-Z0-9-\.]+\.[a-z]{2,4}/;
   if(!validator.test(url)){
-    console.log('I Broken!');
+    websiteInput.css('background-color', '#FFC2B7');
+    alert('Please Enter a Valid URL \(ie http\(s\)\:\/\/www\.\.\.\)');
     return false;
   } else {
-    console.log('I work');
+    websiteInput.css('background-color', '#FFF');
     return true;
   }
 }
