@@ -9,7 +9,6 @@ $('#enter-button').on('click', function(){
   newCard(websiteTitle, websiteUrl); 
   disableEnter();
   countRead();
-  
 });
 
 $('#website-url').on('keyup', function() {
@@ -34,7 +33,7 @@ function addReadClass() {
 };
 
 function clearRead(){
-  $('.read-website').remove();
+  $('.read-website').fadeToggle('slow', 'linear');
 }
 
 function countRead(){
@@ -104,7 +103,7 @@ function readUrl() {
 
 function removeCard(){
   $('.delete-button').on('click', function(event) {
-  $(event.target).closest('.saved-website').remove();
+  $(event.target).closest('.saved-website').hide();
  });
 }
 
