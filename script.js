@@ -99,10 +99,12 @@ function readUrl() {
   })
 }
 
-function removeCard(){
+function removeCard() {
   $('.delete-button').on('click', function(event) {
-  $(event.target).closest('.saved-website').hide();
- });
+    $(event.target).closest('.saved-website').toggle('slow', function() {
+      $(this).remove();
+    })
+  })
 }
 
 function validateUrl(url) {
