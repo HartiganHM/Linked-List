@@ -1,5 +1,9 @@
 /*Listeners*/
-$('.enter-button').on('click', function(){
+$('#clear-button').on('click', function(){
+  clearRead();
+})
+
+$('#enter-button').on('click', function(){
   var websiteTitle = $('#website-title').val();
   var websiteUrl = $('#website-url').val();
   if (validateUrl(websiteUrl) === false) {
@@ -18,16 +22,16 @@ $('section').on('click', function(){
   disableClear();
 })
 
-$('.clear-button').on('click', function(){
-  clearRead();
-})
-
 /*Functions*/
 function addReadClass() {
   readButton();
   readSavedWebsite();
   readUrl();
 };
+
+function clearRead(){
+  $('.read-website').remove();
+}
 
 function countRead(){
   var clickedRead = $('.read-website').length;
@@ -36,6 +40,16 @@ function countRead(){
   $('.toRead').text(unclickedRead);
   $('.doneReading').text(clickedRead);
   $('.myTotal').text(totalCount);
+}
+
+function disableClear() {
+  if ($('.bookmark-buttons#read-button').length != 0) {
+    $('#clear-button').prop('disabled', false);
+    console.log('turn off disabled');
+  } else {
+    $('#clear-button').prop('disabled', true);
+    console.log('keep it disabled');
+  }
 }
 
 function disableEnter() {
@@ -88,29 +102,6 @@ function removeCard(){
   $('.delete-button').on('click', function(event) {
   $(event.target).closest('.saved-website').remove();
  });
-}
-
-function countRead(){
-  var clickedRead = $('.read-website').length;
-  var totalCount = $('.bookmark-buttons#read-button').length;
-  var unclickedRead = totalCount - clickedRead;
-  $('.toRead').text(unclickedRead);
-  $('.doneReading').text(clickedRead);
-  $('.myTotal').text(totalCount);
-}
-
-function clearRead(){
-  $('.read-website').remove();
-}
-
-function disableClear() {
-  if ($('.bookmark-buttons#read-button').length != 0) {
-    $('#clear-button').prop('disabled', false);
-    console.log('turn off disabled');
-  } else {
-    $('#clear-button').prop('disabled', true);
-    console.log('keep it disabled');
-  }
 }
 
 function validateUrl(url) {
