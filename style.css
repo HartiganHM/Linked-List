@@ -13,7 +13,6 @@ body {
 	display: block;
 	font-size: 24px;
 	font-weight: 800;
-	margin: 30px auto;
 }
 
 .button:hover {
@@ -26,10 +25,14 @@ body {
 }
 
 #clear-button {
-    margin: 30px auto 0;
 	display: block;
-	width: 85%;
+	margin-bottom: 1vw;
     white-space: initial;
+	width: 85%;
+}
+
+#enter-button {
+	margin-bottom: 0;
 }
 
 .front-page-focus {
@@ -71,9 +74,15 @@ main {
 	width: 50%;
 }
 
+p {
+	font-size: 1vw;
+	margin: 1vw auto;
+	text-align: center;
+}
+
 table, td, th {
-	font-size: 1.25vw;
-	margin: 2vw auto;
+	font-size: 1vw;
+	margin: 0 auto 2vw;
 	padding: 2px;
 	text-align: center;
 	width: 35vw;
@@ -189,6 +198,10 @@ section {
 		position: relative;
 		height: 40%;
 		width: 100%;
+	}
+
+	p {
+		font-size: 2.75vw;
 	}
 
 	section {

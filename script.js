@@ -6,16 +6,20 @@ $('#clear-button').on('click', function(){
 $('#enter-button').on('click', function(){
   var websiteTitle = $('#website-title').val();
   var websiteUrl = $('#website-url').val();
+  newCard(websiteTitle, websiteUrl); 
+  disableEnter();
+  countRead();
+  
+});
+
+$('#website-url').on('keyup', function() {
+  var websiteUrl = $('#website-url').val();
   if (validateUrl(websiteUrl) === false) {
     return;
   } else {
-    newCard(websiteTitle, websiteUrl); 
-    disableEnter();
-    countRead();
+    $('#enter-button').prop('disabled', false);
   }
-});
-
-$('input').on('keyup', disableEnter)
+})
 
 $('section').on('click', function(){
   countRead();
@@ -109,10 +113,12 @@ function validateUrl(url) {
   var validator = /^(http|https)?:\/\/[a-zA-Z0-9-\.]+\.[a-z]{2,4}/;
   if(!validator.test(url)){
     websiteInput.css('background-color', '#FFC2B7');
-    alert('Please Enter a Valid URL \(ie http\(s\)\:\/\/www\.\.\.\)');
+    $('p').css('color', '#FF8F89');
     return false;
   } else {
     websiteInput.css('background-color', '#FFF');
+    $('p').css('color', '#89FF9D');
+    disableEnter;
     return true;
   }
 }
