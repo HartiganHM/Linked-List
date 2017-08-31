@@ -184,6 +184,10 @@ section {
 		padding-top: 4vw;
 	}
 
+	#clear-button {
+		font-size: 2.5vw;
+	}
+
 	.input-field {
 		width: 85%;
 		font-size: 6vw;

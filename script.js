@@ -48,10 +48,8 @@ function countRead(){
 function disableClear() {
   if ($('.bookmark-buttons#read-button').length != 0) {
     $('#clear-button').prop('disabled', false);
-    console.log('turn off disabled');
   } else {
     $('#clear-button').prop('disabled', true);
-    console.log('keep it disabled');
   }
 }
 
