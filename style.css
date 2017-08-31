@@ -1,48 +1,47 @@
 /*Base Styling for Entire Page*/
-body{
+body {
 	background: #CFD8DC;
 	font-family: 'Open-Sans', Arial, sans-serif;
 	margin: 0;
 }
 
 /*Left Side Input Field*/
-.clear-button, 
-.enter-button{
+.button {
 	background-color: #FFC107;
 	border: 0 solid #FFF;
 	color: #FFF;
 	display: block;
 	font-size: 24px;
 	font-weight: 800;
-	margin: 30px auto;
 }
 
-.clear-button:hover, 
-.enter-button:hover{
+.button:hover {
 	background-color: #FFD773;
 }
 
-.clear-button:disabled, 
-.enter-button:disabled{
+.button:disabled {
 	background-color: #999;
 	opacity: 0.3;
 }
 
-#clear-button{
-    /*display: none;*/
-    margin: 30px auto 0;
+#clear-button {
 	display: block;
-	width: 85%;
+	margin-bottom: 1vw;
     white-space: initial;
+	width: 85%;
 }
 
-.front-page-focus{
+#enter-button {
+	margin-bottom: 0;
+}
+
+.front-page-focus {
 	position: relative;
 	top: 25%;
 	transform: traslateY(-25%);
 }
 
-h1{
+h1 {
 	display: block;
 	font-size: 5vw;
 	font-weight: 800;
@@ -51,7 +50,7 @@ h1{
 	width: 90%;
 }
 
-.input-field{
+.input-field {
 	box-sizing: border-box;
 	display: block;
 	font-size: 3vw;
@@ -60,12 +59,12 @@ h1{
 	width: 35vw;
 }
 
-.logo{
+.logo {
 	margin: 0 10px 0 5px;
 	width: 7vw;
 }
 
-main{
+main {
 	background-color: #455A64;
 	color: #FFF;
 	height: 100%;
@@ -75,9 +74,15 @@ main{
 	width: 50%;
 }
 
-table, td, th{
-	font-size: 1.25vw;
-	margin: 2vw auto;
+p {
+	font-size: 1vw;
+	margin: 1vw auto;
+	text-align: center;
+}
+
+table, td, th {
+	font-size: 1vw;
+	margin: 0 auto 2vw;
 	padding: 2px;
 	text-align: center;
 	width: 35vw;
@@ -86,7 +91,7 @@ table, td, th{
 /*Right Side Input Field*/
 
 /*Buttons*/
-.bookmark-buttons{
+.bookmark-buttons {
 	color: #455A64;
 	background-color: transparent;
 	border: 0px solid #FFF;
@@ -96,51 +101,58 @@ table, td, th{
 	text-decoration-line: underline;
 }
 
-.bookmark-buttons:hover{
+.bookmark-buttons:hover {
 	font-weight: 800;
 	text-decoration-color: #FFC107;
 }
 
-.delete-button{
+.delete-button {
 	float: right;
 }
 
-.read-button{
+.read-button {
 	color: #F05A28;
 	font-weight: 800;
 }
 
 /*Text Elements*/
-h2{
+h2 {
 	font-size: 32px;
 	margin: 5px 0;
 }
 
-.saved-url-link{
+.read-url-link {
+	text-decoration-color: #CFD8DC;
+}
+
+.saved-url-link {
 	color: #607D8B;
 	font-size: 24px;
 	text-decoration-color: #F2F4F4;
 }
 
-.saved-url-link:hover{
+.saved-url-link:hover {
 	color: #455A64;
 	font-weight: 800;
 	text-decoration-color: #FFC107;
 }
 
-.read-url-link{
-	text-decoration-color: #CFD8DC;
-}
-
-
 /*Defined Layout Sections*/
-.bookmark-container{
+.bookmark-container {
 	margin: auto;
 	display: block;
 	width: 100%;
 }
 
-.saved-website{
+.read-website {
+	background-color: #F2F4F4;
+}
+
+.saved-url-link#saved-url-link {
+	overflow-wrap: break-word;
+}
+
+.saved-website {
 	background-color: #FFF;
 	border: 1px solid #607D8B;
 	color: #455A64;
@@ -149,11 +161,7 @@ h2{
 	padding: 10px 20px;
 }
 
-.read-website{
-	background-color: #F2F4F4;
-}
-
-section{
+section {
 	display: inline-block;
 	float: right;
 	height: 100%;
@@ -163,61 +171,49 @@ section{
 	width: 50%;
 }
 
-.url-section{
+.url-section {
 	border-bottom: 1px solid #CFD8DC;
 	border-top: 1px solid #CFD8DC;
 	padding: 20px 0;
 }
 
-.saved-url-link#saved-url-link{
-	overflow-wrap: break-word;
-}
-
 /*Media Queries*/
 @media screen and (max-width: 550px){
-	table, td, th{
-	font-size: 2.75vw;
-	}
-}
-
-@media screen and (max-width: 550px){
-	h1{
+	h1 {
 		font-size: 6vw;
 		padding-top: 4vw;
 	}
-}
 
-@media screen and (max-width: 550px){
-	.input-field{
+	.input-field {
 		width: 85%;
 		font-size: 6vw;
 		margin: 6vw auto;
 	}
-}
 
-@media screen and (max-width: 550px){
-	.logo{
+	.logo {
 		width: 8vw;
 	}
-}
 
-@media screen and (max-width: 550px){
 	main {
 		position: relative;
 		height: 40%;
 		width: 100%;
 	}
-}
 
-@media screen and (max-width: 550px){
+	p {
+		font-size: 2.75vw;
+	}
+
 	section {
 		float: none;
 		width: 100%;
 	}
-}
 
-@media screen and (max-width: 500px){
-	table{
+	table {
 		width: 85%;
+	}
+
+	table, td, th {
+	font-size: 2.75vw;
 	}
 }

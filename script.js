@@ -1,25 +1,29 @@
 /*Listeners*/
-$('.enter-button').on('click', function(){
+$('#clear-button').on('click', function(){
+  clearRead();
+})
+
+$('#enter-button').on('click', function(){
   var websiteTitle = $('#website-title').val();
+  var websiteUrl = $('#website-url').val();
+  newCard(websiteTitle, websiteUrl); 
+  disableEnter();
+  countRead();
+  
+});
+
+$('#website-url').on('keyup', function() {
   var websiteUrl = $('#website-url').val();
   if (validateUrl(websiteUrl) === false) {
     return;
   } else {
-    newCard(websiteTitle, websiteUrl); 
-    disableEnter();
-    countRead();
+    $('#enter-button').prop('disabled', false);
   }
-});
-
-$('input').on('keyup', disableEnter)
+})
 
 $('section').on('click', function(){
   countRead();
   disableClear();
-})
-
-$('.clear-button').on('click', function(){
-  clearRead();
 })
 
 /*Functions*/
@@ -29,6 +33,10 @@ function addReadClass() {
   readUrl();
 };
 
+function clearRead(){
+  $('.read-website').remove();
+}
+
 function countRead(){
   var clickedRead = $('.read-website').length;
   var totalCount = $('.bookmark-buttons#read-button').length;
@@ -36,6 +44,16 @@ function countRead(){
   $('.toRead').text(unclickedRead);
   $('.doneReading').text(clickedRead);
   $('.myTotal').text(totalCount);
+}
+
+function disableClear() {
+  if ($('.bookmark-buttons#read-button').length != 0) {
+    $('#clear-button').prop('disabled', false);
+    console.log('turn off disabled');
+  } else {
+    $('#clear-button').prop('disabled', true);
+    console.log('keep it disabled');
+  }
 }
 
 function disableEnter() {
@@ -90,38 +108,17 @@ function removeCard(){
  });
 }
 
-function countRead(){
-  var clickedRead = $('.read-website').length;
-  var totalCount = $('.bookmark-buttons#read-button').length;
-  var unclickedRead = totalCount - clickedRead;
-  $('.toRead').text(unclickedRead);
-  $('.doneReading').text(clickedRead);
-  $('.myTotal').text(totalCount);
-}
-
-function clearRead(){
-  $('.read-website').remove();
-}
-
-function disableClear() {
-  if ($('.bookmark-buttons#read-button').length != 0) {
-    $('#clear-button').prop('disabled', false);
-    console.log('turn off disabled');
-  } else {
-    $('#clear-button').prop('disabled', true);
-    console.log('keep it disabled');
-  }
-}
-
 function validateUrl(url) {
   var websiteInput = $('input#website-url');
   var validator = /^(http|https)?:\/\/[a-zA-Z0-9-\.]+\.[a-z]{2,4}/;
   if(!validator.test(url)){
     websiteInput.css('background-color', '#FFC2B7');
-    alert('Please Enter a Valid URL \(ie http\(s\)\:\/\/www\.\.\.\)');
+    $('p').css('color', '#FF8F89');
     return false;
   } else {
     websiteInput.css('background-color', '#FFF');
+    $('p').css('color', '#89FF9D');
+    disableEnter;
     return true;
   }
 }
