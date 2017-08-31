@@ -8,6 +8,7 @@ $('#enter-button').on('click', function(){
   var websiteUrl = $('#website-url').val();
   newCard(websiteTitle, websiteUrl); 
   disableEnter();
+  clearInput()
   countRead();
 });
 
@@ -31,6 +32,11 @@ function addReadClass() {
   readSavedWebsite();
   readUrl();
 };
+
+function clearInput() {
+  $('#website-title').val("");
+  $('#website-url').val("");
+}
 
 function clearRead(){
   $('.read-website').fadeToggle('slow', 'linear');
